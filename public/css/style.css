@@ -1,19 +1,12 @@
-@media screen and (min-width:1200px){
-	.fixed-col{
-		position: fixed !important;
-		padding-right: 50px;
-	}
-
-	.non-fixed-col{
-		width: 70%;
-		float: right !important;
-		border-left: 1px solid #ccc;
-		padding-left: 60px !important;
-	}
+#chatbox-container{
+    border:1px solid black;
+    height:500px;
+    width:500px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-@media screen and (max-width:1200px){
-	.border{
-		border-bottom: 1px solid #ccc;
-	}
+#chatlink-title{
+	text-align: center;
 }

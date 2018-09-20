@@ -1,1 +1,1 @@
-        1 file(s) copied.
+ChatLink is an anonymous chatting platform

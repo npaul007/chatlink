@@ -18,9 +18,37 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script>
+			function validateForm(){
+				var x = document.forms["form"]["m"].value;
+				document.getElementById("inputbox").value ="";
+				if (x == "") {
+					alert("Input must be filled out");
+				}else{
+					submitMessage(x); 
+				}
+			}
+			function submitMessage(x){
+				/*should go to server*/
+				recieveMessage(x)
+			}
+			function recieveMessage(x){
+				/*should recieve from server*/
+				document.getElementById("chatbox-container").innerHTML +="<br />"+x;
+				
+			}
+		
+	</script>
+	
 	</head>
 	<body>
 		<h2 id="chatlink-title">ChatLink</h2>
 		<div id="chatbox-container"></div>
+		<div id="inputbox-container">
+			<form id="form">
+				<textarea id="inputbox" name="m"></textarea>
+				<input type="button" id="submit-button" onclick="validateForm()" value="Submit"/>
+			</form>
+		</div>
 	</body>
 </html>

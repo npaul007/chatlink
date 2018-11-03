@@ -17,7 +17,7 @@ var Form = {
     },
     recieveMessage:function (msgObj){
         /*should recieve from server*/
-        document.getElementById("chatbox-container").innerHTML += "<br/><span style='color:"+this.msgColor+"'>"+msgObj.msg+"</span>";
+        document.getElementById("chatbox-container").innerHTML += "<br/><span style='color:#ccc'>[ "+moment(msgObj.date).fromNow()+" ]</span> <span style='color:"+this.msgColor+"'><strong>"+msgObj.msg+"</strong></span>";
     },
     submitMessage:function(msg){
         var msgObj = {

@@ -1,19 +1,20 @@
 {
-  "name": "meanapp",
+  "name": "chatlink",
   "version": "1.0.0",
-  "description": "My first mean app",
+  "description": "An anonymous chat app",
   "main": "0",
   "scripts": {
-    "test": "console.log('foo')"
+    "test": "console.log('foo')",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "meanApp"
   },
   "keywords": [
-    "MEAN"
+    "chatlink"
   ],
-  "author": "Nate Paulemon",
+  "author": "Nate Paulemon, Kenneth Koch, Troy Diz",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.6.4",

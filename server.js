@@ -32,30 +32,8 @@ app.get('/', function (req,res) {
 	res.sendFile(__dirname+'/views/index.html');
 });
 
-app.get('app.js', function(req, res) {
- res.sendStatus(400);
-});
-
-// blog input route
-app.get('/json', function (req,res) {
-	var data = db.collection('blogs').find().toArray( function(err,doc) {
-		res.json(CircularJSON.stringify(doc));
-	});
-});
-
-// post route after form on blog input submitted
-app.post('/foo', function (req,res) {
-	// adding date to blog
-	req.body.date = Date();
-
-	db.collection('blogs').save(req.body,function (err,result) {
-		if(err)
-			console.log(err);
-
-		console.log('Blog Saved to Database Successfully.')
-
-		// route back home
-		res.redirect('/');
-	});
+app.post('/receiveMessage', function(req, res) {
+	var msgObj = JSON.parse(Object.keys(req.body).find((key) => req.body[key] == ''))
+	res.send(JSON.stringify(msgObj))
 });
 

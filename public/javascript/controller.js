@@ -6,8 +6,16 @@ var Form = {
     },
     validateForm: function (){
         var msg = document.forms["form"]["m"].value;
-        document.getElementById("inputbox").value ="";
-        
+        var inputBox = document.getElementById("inputbox");
+
+        // added this to give text area a chat box effect
+        inputBox.value ="";
+        inputBox.disabled = true;
+        setTimeout(() => {
+            inputBox.disabled = false;
+            inputBox.focus();
+        }, 20);
+
         if (msg == "") {
             alert("Input must be filled out");
         }
@@ -20,12 +28,23 @@ var Form = {
         document.getElementById("chatbox-container").innerHTML += "<br/><span style='color:#ccc'>[ "+moment(msgObj.date).fromNow()+" ]</span> <span style='color:"+this.msgColor+"'><strong>"+msgObj.msg+"</strong></span>";
     },
     submitMessage:function(msg){
-        var msgObj = {
-            msg:msg,
-            msgColor:this.msgColor,
-            date:new Date()
-        };
-        /*should go to server*/
-       this. recieveMessage(msgObj)
+        Http.open('POST','/receiveMessage',true);
+        Http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ 
+        Http.send(JSON.stringify({
+            "msg":msg,
+            "msgColor":this.msgColor,
+            "date":new Date()
+        }));
+
+    }
+}
+
+var Http = new XMLHttpRequest();
+
+Http.onreadystatechange = function() {
+    if (Http.readyState == XMLHttpRequest.DONE) {
+        Form.recieveMessage(JSON.parse(Http.responseText))
+
     }
 }

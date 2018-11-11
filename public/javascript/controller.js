@@ -44,7 +44,6 @@ var Http = new XMLHttpRequest();
 
 Http.onreadystatechange = function() {
     if (Http.readyState == XMLHttpRequest.DONE) {
-        Form.recieveMessage(JSON.parse(Http.responseText))
-
+        Form.recieveMessage(JSON.parse(Http.responseText));
     }
 }

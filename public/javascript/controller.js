@@ -1,4 +1,6 @@
 // objects here
+var socket;
+
 var Form = {
     msgColor:"#000000",
     generateMsgColor:function(){
@@ -25,25 +27,18 @@ var Form = {
     },
     recieveMessage:function (msgObj){
         /*should recieve from server*/
-        document.getElementById("chatbox-container").innerHTML += "<br/><span style='color:#ccc'>[ "+moment(msgObj.date).fromNow()+" ]</span> <span style='color:"+this.msgColor+"'><strong>"+msgObj.msg+"</strong></span>";
+        document.getElementById("chatbox-container").innerHTML += "<br/><span style='color:#ccc'>[ "+moment(msgObj.date).fromNow()+" ]</span> <span style='color:"+msgObj.msgColor+"'><strong>"+msgObj.msg+"</strong></span>";
     },
     submitMessage:function(msg){
-        Http.open('POST','/receiveMessage',true);
-        Http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
- 
-        Http.send(JSON.stringify({
+        socket.emit('msgToServer',JSON.stringify({
             "msg":msg,
             "msgColor":this.msgColor,
             "date":new Date()
-        }));
+        }))
 
     }
 }
 
-var Http = new XMLHttpRequest();
 
-Http.onreadystatechange = function() {
-    if (Http.readyState == XMLHttpRequest.DONE) {
-        Form.recieveMessage(JSON.parse(Http.responseText));
-    }
-}
+
+

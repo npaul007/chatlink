@@ -5,6 +5,7 @@ var Form = {
     msgColor:"#000000",
     generateMsgColor:function(){
         this.msgColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        document.getElementById("inputbox").style.color = this.msgColor;
     },
     validateForm: function (){
         var msg = document.forms["form"]["m"].value;

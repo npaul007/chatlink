@@ -23,5 +23,4 @@ window.addEventListener("load",function(){
             Form.validateForm();
         }
     });
-
-})
+});

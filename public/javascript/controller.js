@@ -2,11 +2,12 @@
 var socket;
 
 var Form = {
+    roomId: null,
     msgColor:"#000000",
     generateMsgColor:function(){
         this.msgColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
         document.getElementById("inputbox").style.color = this.msgColor;
-        document.getElementById("inputbox").style.background = this.msgColor;
+        document.getElementById("inputbox").style.border = "2px solid " + this.msgColor;
     },
     validateForm: function (){
         var msg = document.forms["form"]["m"].value;

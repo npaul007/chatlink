@@ -11,6 +11,9 @@ window.addEventListener("load",function(){
 
     // generate random msg color
     Form.generateMsgColor();
+    
+    // generate room id
+    Form.generateRoomId();
 
     // page events here
     document.getElementById('submit-button').addEventListener("click",function(e){
@@ -21,6 +24,18 @@ window.addEventListener("load",function(){
     document.getElementById('inputbox').addEventListener("keydown",function(e){
         if(e.keyCode === 13){
             Form.validateForm();
+        }
+    });
+
+    // submit formid
+    document.getElementById('submit-roomid').addEventListener('click',function(e){
+        var newRoomId = document.getElementById('input-roomid').value;
+        if(newRoomId.trim() != ""){
+            Form.roomId = newRoomId;
+            alert('Your room id has been set to: '+ Form.roomId);
+        }
+        else{
+            alert("room id input is empty!");
         }
     });
 });

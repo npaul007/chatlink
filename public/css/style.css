@@ -15,7 +15,7 @@
 #inputbox-container{
     border:1px solid black;
     border-top: none;
-    height:54px;
+    height:102px;
     width:500px;
     display:block;
     margin-left:auto;
@@ -34,3 +34,14 @@
     float: right;
 }
 
+#room-id-form input[type=text]{
+    resize: none;
+    width: 430px;
+    height: 50px;
+    float: left;
+}
+
+#room-id-form input[type=button]{
+    width:67px;
+    height: 50px;
+}

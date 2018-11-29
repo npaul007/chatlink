@@ -1,5 +1,5 @@
 // objects here
-var socket;
+const socket = require('socket.io');
 
 var Form = {
     msgColor:"#000000",

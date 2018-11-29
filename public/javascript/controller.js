@@ -27,7 +27,7 @@ var Form = {
     },
     recieveMessage:function (msgObj){
         /*should recieve from server*/
-        document.getElementById("chatbox-container").innerHTML += "<br/><span style='color:#ccc'>[ "+moment(msgObj.date).format("LLL")+" ]</span> <span style='color:"+msgObj.msgColor+"'><strong>"+msgObj.msg+"</strong></span>";
+        document.getElementById("chatbox-container").innerHTML += "<br/><span style='color:#ccc'>"+moment(msgObj.date).format('MMMM Do YYYY, h:mm:ss a')+": </span> <span style='color:"+msgObj.msgColor+"'><strong>"+msgObj.msg+"</strong></span>";
     },
     submitMessage:function(msg){
         socket.emit('msgToServer',JSON.stringify({

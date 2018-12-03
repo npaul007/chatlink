@@ -35,6 +35,6 @@ io.on('connection', function(client) {
 	});
 	
 	client.on('msgToServer', function(msgObj) {
-		io.sockets.emit('msgToClient',msgObj)
+    io.sockets.emit('msgToClient',msgObj)
 	});
 });

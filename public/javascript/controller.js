@@ -7,9 +7,6 @@ var Form = {
     generateMsgColor:function(){
         this.msgColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
         document.getElementById("inputbox").style.color = this.msgColor;
-<<<<<<< HEAD
-        // document.getElementById("inputbox").style.background = this.msgColor;
-=======
         document.getElementById("inputbox").style.border = "2px solid " + this.msgColor;
     },
     generateRoomId:function() {
@@ -18,7 +15,6 @@ var Form = {
         };
         this.roomId = (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
         document.getElementById('input-roomid').value = this.roomId;
->>>>>>> 17a9019116feddeb4ea20e94f233dac17e547306
     },
     validateForm: function (){
         var msg = document.forms["form"]["m"].value;

@@ -24,24 +24,24 @@
 }
 #inputbox{
     resize: none;
-    width: 430px;
+    width: 388px;
     height: 50px;
     float: left;
 }
 #submit-button{
-    width: 67px;
+    width: 110px;
     height: 50px;
     float: right;
 }
 
 #room-id-form input[type=text]{
     resize: none;
-    width: 430px;
+    width: 388px;
     height: 50px;
     float: left;
 }
 
-#room-id-form input[type=button]{
-    width:67px;
+#submit-roomid{
+    width:110px;
     height: 50px;
 }

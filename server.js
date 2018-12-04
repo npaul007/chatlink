@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 var port = 3000;
 server.listen(port,function(){
-	console.log("fChatlink up and running!");
+	console.log("Chatlink up and running!");
 	console.log("App running on localhost:" +String(port));
 }); 
 
@@ -30,13 +30,11 @@ app.post('/receiveMessage', function(req, res) {
 });
 
 io.on('connection', function(client) {  	
-    console.log('Client connected to Server successfully.');
-
     client.on('join', function(data) {
         console.log(data);
 	});
 	
 	client.on('msgToServer', function(msgObj) {
-		io.sockets.emit('msgToClient',msgObj)
+    io.sockets.emit('msgToClient',msgObj)
 	});
 });

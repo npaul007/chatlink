@@ -1,19 +1,25 @@
-window.addEventListener("load",function(){
-    // initialize socket connection
-    socket = io.connect('http://localhost:3000');
-    socket.on('connect', function(data) {
-        console.log('CLient connected to Socket successfully.');
-    });
-
-    socket.on('msgToClient',function(msgObj){
+let setSocketListener = (socket,Form) => {
+    socket.on(Form.roomId,function(msgObj){
         Form.recieveMessage(JSON.parse(msgObj));
     });
+}
 
+window.addEventListener("load",function(){
     // generate random msg color
     Form.generateMsgColor();
     
     // generate room id
     Form.generateRoomId();
+
+    // initialize socket connection
+    socket = io.connect('http://localhost:3000');
+    socket.on('connect', function(data) {
+        console.log('CLient connected to Socket successfully.');
+
+        setSocketListener(socket,Form)
+    });
+
+
 
     // page events here
     document.getElementById('submit-button').addEventListener("click",function(e){
@@ -32,6 +38,7 @@ window.addEventListener("load",function(){
         var newRoomId = document.getElementById('input-roomid').value;
         if(newRoomId.trim() != ""){
             Form.roomId = newRoomId;
+            setSocketListener(socket,Form)
             alert('Your room id has been set to: '+ Form.roomId);
         }
         else{

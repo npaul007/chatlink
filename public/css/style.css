@@ -18,7 +18,7 @@
 #inputbox-container{
     border:1px solid black;
     border-top: none;
-    height:54px;
+    height:102px;
     width:500px;
     display:block;
     margin-left:auto;
@@ -27,12 +27,30 @@
 }
 #inputbox{
     resize: none;
-    width: 430px;
+    width: 388px;
     height: 50px;
     float: left;
 }
 #submit-button{
-    width: 67px;
+    width: 110px;
     height: 50px;
+    float: right;
+}
+
+#room-id-form input[type=text]{
+    resize: none;
+    width: 388px;
+    height: 50px;
+    float: left;
+}
+
+#submit-roomid{
+    width:110px;
+    height: 50px;
+}
+#collapse{
+    text-align: center;
+}
+#info-button{
     float: right;
 }

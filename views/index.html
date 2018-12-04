@@ -15,7 +15,16 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	</head>
 	<body>
-		<h2 id="chatlink-title">ChatLink</h2>
+		<h2 id="chatlink-title">ChatLink
+		<button id="info-button" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse">
+			INFO</button></h2>
+		  <div class="collapse" id="collapse">
+			<div class="card card-body">
+			  ChatLink allows multiple users to connect to a chatroom and send/recieve messages in that chatroom.<br>
+			  To change the chatroom you are in, simply type the new Room ID and click the 'Join Room' button.<br>
+			  Your chat color is chosen randomly. To change the color, refresh the page and rejoin your chatroom.
+			</div>
+		  </div>
 		<div id="chatbox-container"></div>
 		<div id="inputbox-container">
 			<form id="form">

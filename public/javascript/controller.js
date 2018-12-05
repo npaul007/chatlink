@@ -45,8 +45,7 @@ var Form = {
             "msgColor":this.msgColor,
             "date":new Date(),
             "roomId":this.roomId
-        }))
-
+        }));
     }
 }
 

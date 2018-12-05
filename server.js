@@ -12,10 +12,8 @@ app.use(express.static('./'));
 // for reading data from post
 app.use(bodyParser.urlencoded({extended: true}));
 
-var port = 3000;
-server.listen(port,function(){
+server.listen(process.env.PORT || 3000,function(){
 	console.log("Chatlink up and running!");
-	console.log("App running on localhost:" +String(port));
 }); 
 
 // blog input route

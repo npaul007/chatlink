@@ -12,14 +12,11 @@ window.addEventListener("load",function(){
     Form.generateRoomId();
 
     // initialize socket connection
-    socket = io.connect('http://localhost:3000');
+    socket = io.connect();
     socket.on('connect', function(data) {
         console.log('CLient connected to Socket successfully.');
-
         setSocketListener(socket,Form)
     });
-
-
 
     // page events here
     document.getElementById('submit-button').addEventListener("click",function(e){

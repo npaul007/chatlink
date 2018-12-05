@@ -37,6 +37,7 @@ var Form = {
     },
     recieveMessage:function (msgObj){
         document.getElementById("chatbox-container").innerHTML += "<br/><span style='color:#ccc'>"+moment(msgObj.date).format('MMMM Do YYYY, h:mm:ss a')+": </span> <span style='color:"+msgObj.msgColor+"'><strong>"+msgObj.msg+"</strong></span>";
+        document.getElementById("chatbox-container").scrollTop = document.getElementById("chatbox-container").scrollHeight;
     },
     submitMessage:function(msg){
         socket.emit('msgToServer',JSON.stringify({

@@ -1,4 +1,6 @@
 let setSocketListener = (socket,Form) => {
+    socket.removeListener(Form.roomId);
+
     socket.on(Form.roomId,function(msgObj){
         Form.recieveMessage(JSON.parse(msgObj));
     });
